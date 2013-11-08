@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
+<LastUpdated>2013-11-08</LastUpdated>
 <Updates>
    <Update Id="KB2870270">
-        <Description>2013-07 Update that improves cloud service provider resiliency in Windows Server 2012. This update replaces Update KB2848344</Description>
-   	<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix472237/9200/free/465826_intl_x64_zip.exe</DownloadURL>
+		<PublicationDate>
+        <Description>2013-07-15 Update that improves cloud service provider resiliency in Windows Server 2012. This update replaces Update KB2848344</Description>
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix472237/9200/free/465826_intl_x64_zip.exe</DownloadURL>
+   </Update>
+   <Update Id="KB2869923">
+		<Description>2013-7-15 Physical Disk resource move during the backup of a Cluster Shared Volume (CSV) may cause resource outage.</Description>
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix466281/9200/free/465753_intl_x64_zip.exe</DownloadURL>
    </Update>
    <Update Id="KB2838043">
         <Description>2013-06-14 Can't access a resource that is hosted on a Windows 8 or Windows Server 2012-based failover cluster</Description>
@@ -10,19 +16,14 @@
    </Update>
    <Update Id="KB2803748">
         <Description>2013-01-23 Failover Cluster Management snap-in crashes after you install update 2750149 on a Windows Server 2012-based failover cluster</Description>
-   	<DownloadURL>http://download.microsoft.com/download/F/9/8/F985C3E3-2DDD-40BA-9DF7-C7CD4836273E/Windows8-RT-KB2803748-x64.msu</DownloadURL>
+		<DownloadURL>http://download.microsoft.com/download/F/9/8/F985C3E3-2DDD-40BA-9DF7-C7CD4836273E/Windows8-RT-KB2803748-x64.msu</DownloadURL>
    </Update>
    <Update Id="KB2770917">
         <Description>2012-11-13 Windows 8 and Windows Server 2012 cumulative update: November 2012</Description>
-   	<DownloadURL> </DownloadURL>
+		<DownloadURL> </DownloadURL>
    </Update>
    <Update Id="KB976424">
         <Description>2012-11-13 Error code when the kpasswd protocol fails after you perform an authoritative restore: "KDC_ERROR_S_PRINCIPAL_UNKNOWN"</Description>
-	<DownloadURL>http://hotfixv4.microsoft.com/Windows%207/WindowsServer%202008%20R2/sp1/Fix336120/7600/free/418332_intl_x64_zip.exe</DownloadURL>
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%207/WindowsServer%202008%20R2/sp1/Fix336120/7600/free/418332_intl_x64_zip.exe</DownloadURL>
    </Update>
-   <Update Id="KB2869923">
-        <Description>Physical Disk resource move during the backup of a Cluster Shared Volume (CSV) may cause resource outage.</Description>
-	<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix466281/9200/free/465753_intl_x64_zip.exe</DownloadURL>
-   </Update>
-   
 </Updates>
