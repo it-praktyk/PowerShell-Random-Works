@@ -11,7 +11,7 @@ http://www.hyper-v.nu/archives/hvredevoort/2013/06/updated-windows-server-2012-h
 next Niklas Akerlund at 28-06-2013 on his webpage published improved version
 http://vniklas.djungeln.se/2013/06/28/hotfix-and-updates-check-of-hyper-v-and-cluster-with-powershell/
 
-Please update if some contribution on this list are missed.
+Please update if some contributions on this list are missed.
 
 Sources for updates and hotfixes
 
@@ -20,11 +20,13 @@ http://social.technet.microsoft.com/wiki/contents/articles/15576.hyper-v-update-
 Recommended hotfixes and updates for Windows Server 2012-based Failover Clusters are published here
 http://support.microsoft.com/kb/2784261
 
-Script use xml that are stored in folder with scripts
+Script use xml files that are stored in folder with script. Initial release of this script is based on download at 2013-11-08 from Niklas Akerlund site.
 
-Initial release of this script is based on download at 2013-11-08 from Niklas Akerlund site 
+Files with hotfixes was updated at November 11, 2013 by Wojciech Sciesinski.
 
 IDEAS 
-- download only needed hotfixes
+- checking github website for updated xlm files and downloading it locally
+- checking local folder or remote share for previously downloaded hotfixes and download only missed (MD5/SHA1 sum needed ?)
 - add decompress option for downloaded hotfixes
-- output report to file / with diffrent format support
+- output report to file / with diferent format support
+- add support for another systems and roles e.g. file services
