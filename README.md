@@ -10,3 +10,5 @@ Function create for fun and for advertise my skils :-)
 If you like this work please endorse my PowerShell skill on my LinkedIn profile: http://pl.linkedin.com/in/sciesinskiwojciech/
 
 Please feel free to add any changes to this work.
+
+The function contains one intentionally error. Do you can find it?
