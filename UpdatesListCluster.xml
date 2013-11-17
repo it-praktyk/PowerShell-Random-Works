@@ -8,9 +8,9 @@
 		<Notes></Notes>
 	</Update>
    <Update Id="KB2870270">
-        <Description>2013-07-15 Update that improves cloud service provider resiliency in Windows Server 2012. This update replaces Update KB2848344</Description>
+        <Description>2013-07-15 Update that improves cloud service provider resiliency in Windows Server 2012.</Description>
 		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix472237/9200/free/465826_intl_x64_zip.exe</DownloadURL>
-		<Notes></Notes>
+		<Notes>This update replaces Update KB2848344</Notes>
    </Update>
    <Update Id="KB2869923">
 		<Description>2013-07-15 Physical Disk resource move during the backup of a Cluster Shared Volume (CSV) may cause resource outage.</Description>
