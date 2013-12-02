@@ -1,6 +1,6 @@
 Get-WindowsHotfixes
 
-Powershell script intended for checking Windows Server hosts for hotfixes and updates published for Hyper-V and Failover Cluster rule in Windows Server 2012
+PowerShell script intended for checking Windows Server hosts for hotfixes and updates published for Hyper-V and Failover Cluster rule in Windows Server 2012
 
 First version of the script was published at 24 May 2013 by Cristian Edwards on his blogs
 http://blogs.technet.com/b/cedward/archive/2013/05/24/validating-hyper-v-2012-and-failover-clustering-2012-hotfixes-and-updates-with-powershell.aspx
@@ -17,16 +17,19 @@ Sources for updates and hotfixes
 
 Update List for Windows Server 2012 for Hyper-V are published here
 http://social.technet.microsoft.com/wiki/contents/articles/15576.hyper-v-update-list-for-windows-server-2012.aspx
+
 Recommended hotfixes and updates for Windows Server 2012-based Failover Clusters are published here
 http://support.microsoft.com/kb/2784261
 
 Script use xml files that are stored in folder with script. Initial release of this script is based on download at 2013-11-08 from Niklas Akerlund site.
 
-Files with hotfixes was updated at November 11, 2013 by Wojciech Sciesinski.
+Updates files releases information
+2013-11-11 - initial relaeses based on current data, verified by Wojciech Sciesinski, wojciech@sciesinski.net
+2013-12-02 - Hyper-V/Cluster update hotfix KB2894032 added by Wojciech Sciesinski, wojciech@sciesinski.net
 
 IDEAS 
-- checking github website for updated xlm files and downloading it locally
+- checking github website for updated xml files and downloading it locally
 - checking local folder or remote share for previously downloaded hotfixes and download only missed (MD5/SHA1 sum needed ?)
 - add decompress option for downloaded hotfixes
-- output report to file / with diferent format support
-- add support for another systems and roles e.g. file services
+- output report to file / with different format support
+- add support for another systems and roles e.g. Windows Server 2008 R2 or file services
