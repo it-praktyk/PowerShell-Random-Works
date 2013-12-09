@@ -2,7 +2,7 @@
 <Updates>
    <Description>Recommended hotfixes and updates for Windows Server 2012-based Failover Clusters, version November 11, 2013</Description>
    <LastUpdated>2013-11-17</LastUpdated>
-   <Update id="KB2894464"
+   <Update id="KB2894464">
 		<Description>2013-11-14 Error message when you try to schedule a shadow copy task in Windows Server 2012</Description>
 		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix477775/9200/free/468892_intl_x64_zip.exe</DownloadURL>
 		<Notes></Notes>
