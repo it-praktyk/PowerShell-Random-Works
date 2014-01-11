@@ -27,10 +27,12 @@ Initial release of this script and xml files is based on download at 2013-11-08 
 Updates to UpdatesListCluster.xml
 2013-11-17 - added KB2894464 - by Wojciech Sciesinski
 2013-12-12 - added KB2894032,KB2903938,KB2908415,KB2779069,KB2905249 - by Wojciech Sciesinski based directly on KB Microsoft base
+2014-01-11 - added KB2878635, removed KB2870270,KB2869923,KB2908415 - by Wojciech Sciesinski based directly on KB Microsoft base
 
 Updates to UpdatesListHyperV.xml
 2013-11-17 - added KB2894032 - by Wojciech Sciesinski
 2013-12-12 - added KB2894032,KB2902014,KB2894485 - by Wojciech Sciesinski based directly on KB Microsoft base
+2014-01-11 - added KB2902821 - by Wojciech Sciesinski based directly on KB Microsoft base
 
 
 IDEAS 
@@ -39,5 +41,6 @@ IDEAS
 - add decompress option for downloaded hotfixes
 - output report to file / with diferent format support
 - add support for another systems and roles e.g. file services
+- add test based on operating system version 
 
 Some ideas implementent in Unstable branch
