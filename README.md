@@ -33,6 +33,7 @@ Updates to UpdatesListHyperV.xml
 2013-11-17 - added KB2894032 - by Wojciech Sciesinski
 2013-12-12 - added KB2894032,KB2902014,KB2894485 - by Wojciech Sciesinski based directly on KB Microsoft base
 2014-01-11 - added KB2902821 - by Wojciech Sciesinski based directly on KB Microsoft base
+2014-01-19 - added KB2916993,KB2913695,KB2913461,KB2901237 - by Wojciech Sciesinski based directly on KB Microsoft base
 
 
 IDEAS 
