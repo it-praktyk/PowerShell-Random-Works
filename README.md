@@ -28,6 +28,7 @@ Updates to UpdatesListCluster.xml
 2013-11-17 - added KB2894464 - by Wojciech Sciesinski
 2013-12-12 - added KB2894032,KB2903938,KB2908415,KB2779069,KB2905249 - by Wojciech Sciesinski based directly on KB Microsoft base
 2014-01-11 - added KB2878635, removed KB2870270,KB2869923,KB2908415 - by Wojciech Sciesinski based directly on KB Microsoft base
+2014-01-19 - added KB2911101 - by Wojciech Sciesinski based directly on KB Microsoft base
 
 Updates to UpdatesListHyperV.xml
 2013-11-17 - added KB2894032 - by Wojciech Sciesinski
