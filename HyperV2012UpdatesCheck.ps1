@@ -3,6 +3,27 @@
 #
 # Niklas Akerlund 2013-06-28
 
+<#
+.SYNOPSIS
+Powershell script intended for checking Windows Server hosts for hotfixes and updates published for Hyper-V and Failover Cluster rule in Windows Server 2012.
+.DESCRIPTION
+Script use xml files UpdatesListCluster.xml and UpdatesListHyperV.xml that are stored in folder with script. 
+.PARAMETER ComputerName
+The name of the Computer you want to run the command against.
+.PARAMETER ClusterName 
+Optional - The Cluster which contains the nodes you'd like to run the report against.
+.PARAMETER Download
+Optional - Download all hotfixes which are not currently installed.
+.PARAMETER DownloadPath
+Optional - Download path. Must be entered when -Download is used.
+
+
+.EXAMPLE
+.\HyperV2012UpdatesCheck.ps1 -ClusterName mycluster -Download -DownloadPath c:\temp\hotfixes
+.LINK
+https://github.com/it-praktyk/Get-WindowsHotfixes
+#>
+
 param
 (
     [parameter(ValueFromPipeline=$true,  
