@@ -1,4 +1,4 @@
-��<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <Updates>
 
@@ -380,7 +380,7 @@
 
 		<Description>2014-01-15 Standard replica is created unexpectedly after you restart the VMMS service in Windows Server 2012</Description>
 
-		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix476836/9200/free/470016_intl_x64_zip.exe</DownloadURL?>
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix476836/9200/free/470016_intl_x64_zip.exe</DownloadURL>
 
 		<Notes></Notes>
 
