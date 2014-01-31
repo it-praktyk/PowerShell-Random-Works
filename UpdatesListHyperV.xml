@@ -376,7 +376,7 @@
 
 	</Update>
 
-	<Update> id="KB2901237">
+	<Update id="KB2901237">
 
 		<Description>2014-01-15 Standard replica is created unexpectedly after you restart the VMMS service in Windows Server 2012</Description>
 
