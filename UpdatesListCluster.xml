@@ -1,14 +1,22 @@
-��<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <Updates>
 
-   <Description>Recommended hotfixes and updates for Windows Server 2012-based Failover Clusters, version January 11, 2014</Description>
+   <Description>Recommended hotfixes and updates for Windows Server 2012-based Failover Clusters</Description>
 
-   <LastUpdated>2014-01-11</LastUpdated>
+   <LastUpdated>2014-02-05</LastUpdated>
 
    <Source>http://support.microsoft.com/kb/2784261/en-us</Source>
 
+   <Update id="2784261">
+		
+		<Description>2014-01-15 OffloadWrite is doing PrepareForCriticalIo for the whole VHD in a Windows Server 2012 or Windows Server 2012 R2 Hyper-V host</Description>
+		
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix486053/9200/free/470756_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
    
+   </Update>
 
    <Update id="KB2911101">
 
