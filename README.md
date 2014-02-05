@@ -25,16 +25,18 @@ Script use xml files UpdatesListCluster.xml and UpdatesListHyperV.xml that are s
 Initial release of this script and xml files is based on download at 2013-11-08 from Niklas Akerlund site.
 
 Updates to UpdatesListCluster.xml
-2013-11-17 - added KB2894464 - by Wojciech Sciesinski
-2013-12-12 - added KB2894032,KB2903938,KB2908415,KB2779069,KB2905249 - by Wojciech Sciesinski based directly on KB Microsoft base
-2014-01-11 - added KB2878635, removed KB2870270,KB2869923,KB2908415 - by Wojciech Sciesinski based directly on KB Microsoft base
-2014-01-19 - added KB2911101 - by Wojciech Sciesinski based directly on KB Microsoft base
+2013-11-17 - added KB2894464
+2013-12-12 - added KB2894032,KB2903938,KB2908415,KB2779069,KB2905249
+2014-01-11 - added KB2878635, removed KB2870270,KB2869923,KB2908415
+2014-01-19 - added KB2911101
+2014-02-05 - added KB2784261
 
 Updates to UpdatesListHyperV.xml
-2013-11-17 - added KB2894032 - by Wojciech Sciesinski
-2013-12-12 - added KB2894032,KB2902014,KB2894485 - by Wojciech Sciesinski based directly on KB Microsoft base
-2014-01-11 - added KB2902821 - by Wojciech Sciesinski based directly on KB Microsoft base
-2014-01-19 - added KB2916993,KB2913695,KB2913461,KB2901237 - by Wojciech Sciesinski based directly on KB Microsoft base
+2013-11-17 - added KB2894032
+2013-12-12 - added KB2894032,KB2902014,KB2894485
+2014-01-11 - added KB2902821
+2014-01-19 - added KB2916993,KB2913695,KB2913461,KB2901237
+
 
 
 IDEAS 
@@ -45,4 +47,4 @@ IDEAS
 - add support for another systems and roles e.g. file services
 - add test based on operating system version 
 
-Some ideas implementent in Unstable branch
+Some ideas implemented in Unstable branch
