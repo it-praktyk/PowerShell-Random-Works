@@ -8,7 +8,7 @@
 
    <Source>http://support.microsoft.com/kb/2784261/en-us</Source>
 
-   <Update id="2784261">
+   <Update id="KB2784261">
 		
 		<Description>2014-01-15 OffloadWrite is doing PrepareForCriticalIo for the whole VHD in a Windows Server 2012 or Windows Server 2012 R2 Hyper-V host</Description>
 		
