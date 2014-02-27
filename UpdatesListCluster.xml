@@ -4,9 +4,29 @@
 
    <Description>Recommended hotfixes and updates for Windows Server 2012-based Failover Clusters</Description>
 
-   <LastUpdated>2014-02-05</LastUpdated>
+   <LastUpdated>2014-02-27</LastUpdated>
 
    <Source>http://support.microsoft.com/kb/2784261/en-us</Source>
+   
+   <Update id="KB2881151">
+   
+		<Description>2014-02-12 Cluster group that has dependent resources does not fail over on a Windows Server 2012-based or Windows Server 2008 SP2-based computer</Description>
+		
+		<DownloadURL>hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix484122/9200/free/470445_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
+   
+   </Update>
+   
+   <Update id="KB2919393">
+   
+		<Description>2014-02-12 Windows RT, Windows 8, and Windows Server 2012 update rollup: February 2014</Description>
+		
+		<DownloadURL>http://download.microsoft.com/download/4/5/2/452830FF-AE39-44E5-8988-AF0AC50FF28D/Windows8-RT-KB2919393-x64.msu</DownloadURL>
+		
+		<Notes></Notes>
+   
+   </Update>
 
    <Update id="KB2784261">
 		
