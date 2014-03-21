@@ -12,7 +12,7 @@
    
 		<Description>2014-02-12 Cluster group that has dependent resources does not fail over on a Windows Server 2012-based or Windows Server 2008 SP2-based computer</Description>
 		
-		<DownloadURL>hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix484122/9200/free/470445_intl_x64_zip.exe</DownloadURL>
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix484122/9200/free/470445_intl_x64_zip.exe</DownloadURL>
 		
 		<Notes></Notes>
    
