@@ -4,13 +4,13 @@
 
 	<Description>Updates List Hyper-V and Cluster</Description>
 
-	<LastUpdated>2014-02-27</LastUpdated>
+	<LastUpdated>2014-03-24</LastUpdated>
 
 	<Update Id="KB2756872">
 
         <Description>2012-02-10 Windows 8 Client and Windows Server 2012 General Availability Update Rollup</Description>
 
-        <DownloadURL> </DownloadURL>
+        <DownloadURL></DownloadURL>
 
 		<Notes></Notes>
 
@@ -25,7 +25,7 @@
 		<Notes></Notes>
 
 	</Update>
-
+	
 	<Update Id="KB2770917">
 
         <Description>2012-11-02 Windows 8 and Windows Server 2012 cumulative update: November 2012</Description>
@@ -394,6 +394,36 @@
 		
 		<Notes></Notes>
 	
+	</Update>
+	
+	<Update Id="KB2901896">
+	
+		<Description>2014-03-11 CSV block cache causes poor performance of virtual machines on Windows Server 2012</Description>
+		
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208/Windows%20Server%202012%20RTM/nosp/Fix495008/9200/free/472451_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
+	
+	</Update>
+	
+	<Update Id="KB2929869"</Update>
+	
+		<Description>2014-03-12 CSV snapshot file is corrupted when you create some files on the live volume</Description>
+		
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208/Windows%20Server%202012%20RTM/nosp/Fix486119/9200/free/472658_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
+		
+	</Update>
+	
+	<Update Id="KB2929078">
+	
+		<Description>2014-03-12 The CSV snapshot is corrupted when you delete and then re-create a file on the live volume in Windows Server 2012</Description>
+		
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208/Windows%20Server%202012%20RTM/nosp/Fix486050/9200/free/472717_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
+		
 	</Update>
 
 </Updates>
