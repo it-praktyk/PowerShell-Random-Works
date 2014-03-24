@@ -390,7 +390,7 @@
 	
 		<Description>2014-02-12 Virtual hard disk cannot be created on an SMB server without resiliency support from a Windows 8 or Windows Server 2012 computer</Description>
 		
-		<DownloadURL>hotfixv4.microsoft.com/Windows%208/Windows%20Server%202012%20RTM/nosp/Fix485526/9200/free/471500_intl_x64_zip.exe</DownloadURL>
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208/Windows%20Server%202012%20RTM/nosp/Fix485526/9200/free/471500_intl_x64_zip.exe</DownloadURL>
 		
 		<Notes></Notes>
 	
