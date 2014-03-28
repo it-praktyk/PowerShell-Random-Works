@@ -406,7 +406,7 @@
 	
 	</Update>
 	
-	<Update Id="KB2929869"</Update>
+	<Update Id="KB2929869">
 	
 		<Description>2014-03-12 CSV snapshot file is corrupted when you create some files on the live volume</Description>
 		
