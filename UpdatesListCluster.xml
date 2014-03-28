@@ -28,16 +28,6 @@
    
    </Update>
 
-   <Update id="KB2784261">
-		
-		<Description>2014-01-15 OffloadWrite is doing PrepareForCriticalIo for the whole VHD in a Windows Server 2012 or Windows Server 2012 R2 Hyper-V host</Description>
-		
-		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix486053/9200/free/470756_intl_x64_zip.exe</DownloadURL>
-		
-		<Notes></Notes>
-   
-   </Update>
-
    <Update id="KB2911101">
 
 		<Description>2014-01-14 Windows RT, Windows 8, and Windows Server 2012 update rollup: January 2014</Description>
