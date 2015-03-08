@@ -1,0 +1,74 @@
+﻿Function <SIMPLE-FUNCTION> {
+<#
+  .SYNOPSIS
+   Function intended for 
+   
+  .DESCRIPTION
+  
+  
+  .PARAMETER FirstParameter
+  
+
+  .EXAMPLE
+   
+      
+  .NOTES
+   AUTHOR: Wojciech Sciesinski, wojciech[at]sciesinski[dot]net
+   KEYWORDS: PowerShell
+   
+   VERSIONS HISTORY
+   0.1.0 -  2015-0x-xx - Short notes about version
+
+   TODO
+   
+   DISCLAIMER
+   This script is provided AS IS without warranty of any kind. I disclaim all implied warranties including, without limitation,
+   any implied warranties of merchantability or of fitness for a particular purpose. The entire risk arising out of the use or
+   performance of the sample scripts and documentation remains with you. In no event shall I be liable for any damages whatsoever
+   (including, without limitation, damages for loss of business profits, business interruption, loss of business information,
+   or other pecuniary loss) arising out of the use of or inability to use the script or documentation. 
+   
+   TEMPLATE NAME: Simple function
+   TEMPLATE VERSION 
+   0.1.0 - Initial release, parameter provided from CLI, results returned as an object
+    
+   
+#>
+
+#Requires -Version 2.0 
+[CmdletBinding()] 
+
+param(
+
+	[parameter(mandatory=$false)]
+	FirstParameter
+
+	#more about parameters 
+	#about_Functions_Advanced_Parameters
+	#https://technet.microsoft.com/en-us/library/hh847743.aspx
+
+)
+
+BEGIN {
+
+    $Results=@()
+
+}
+
+PROCESS {
+
+
+    $Result = New-Object PSObject
+	$Result | Add-Member -type NoteProperty -name FirstPropertyName -value $FirstPropertyName
+	
+	$Results+=$Result
+
+}
+
+END {
+
+    Return $Results
+
+}
+
+}
