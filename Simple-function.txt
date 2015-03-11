@@ -35,6 +35,7 @@
 	TEMPLATE VERSION 
 	0.1.0 - Initial release, parameter provided from CLI, results returned as an PSObject
 	0.1.1 - Added links in function help/header, help/header formating updated
+	0.1.2 - Removing requirement for PowerShell 2.0 - is not used in functions
     
    
 #>
