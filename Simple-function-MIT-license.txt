@@ -26,7 +26,7 @@
 		
 	LICENSE
 	This function is licensed under The MIT License (MIT)
-	Full license text: http://http://opensource.org/licenses/MIT
+	Full license text: http://opensource.org/licenses/MIT
 	Copyright (c) 2015 Wojciech Sciesinski
 	
 	DISCLAIMER
@@ -37,9 +37,10 @@
 	or other pecuniary loss) arising out of the use of or inability to use the script or documentation. 
    
 	TEMPLATE NAME: Simple function - MIT License
-	TEMPLATE BASE - Simple function 0.1.1
+	TEMPLATE BASE - Simple function 0.1.2
 	TEMPLATE VERSION 
-	0.1.0 - Based on 
+	0.1.0 - 2015-03-11 - Initial release
+	0.1.1 - 2015-03-11 - Link to the full license text corrected
 	
 	
    
