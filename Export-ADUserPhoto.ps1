@@ -1,25 +1,38 @@
-﻿Function Export-ADPhoto {
+﻿Function Export-ADUserPhoto {
 <#
     .SYNOPSIS
     Export the photos stored in an Active Directory and used by Outlook or Lync as users pictures.
         
     .DESCRIPTION
     Reads the ThumbnailPhoto attribute of the specified user's Active
-    Directory account, and export the returned photo to jpg file.
+    Directory account, and export the returned photo to jpg file named as the user SAMAccountName
     
-    .PARAMETER UserName
-    The User logon name of the Active Directory user to query.
+    .PARAMETER Identity
+    Specifies an Active Directory user object by providing one of the following property values. The identifier in
+	parentheses is the LDAP display name for the attribute. The acceptable values for this parameter are:
+
+	-- A Distinguished Name
+	-- A GUID (objectGUID)
+	-- A Security Identifier (objectSid)
+	-- A SAM Account Name (sAMAccountName)
+
+	The cmdlet searches the default naming context or partition to find the object. If two or more objects are
+	found, the cmdlet returns a non-terminating error.
+
+	This parameter can also get this object through the pipeline or you can set this parameter to an object
+	instance.
     
     .OUTPUTS
     System.Object[]
     
     .EXAMPLE
-    PS > Export-ADPhoto user1
+    PS > Export-ADUserPhoto user1
+	
     
     Export the photo stored in the Active Directory for user account to jpg file".
 
 	.LINK
-    https://github.com/it-praktyk/<BASE_REPOSITORY_URL>
+    https://github.com/it-praktyk/Export-ADUserPhoto
     
     .LINK
     https://www.linkedin.com/in/sciesinskiwojciech
@@ -29,12 +42,14 @@
     KEYWORDS: PowerShell
    
     VERSIONS HISTORY
-    0.1.0 -  2016-01-06 - The first version
+    - 0.1.0 - 2016-01-06 - The first version
+	- 0.2.0 - 2016-01-07 - The function renamed to Export-ADUserPhoto, the parameter UserName renamed to Identity
 
     TODO
-	Import the Active Directory module on startup
-	Test parameters from pipeline
-        
+	- Test parameter Identity from pipeline
+	- Verify declared type of parameter Identity
+	- Update examples
+	        
     LICENSE
     Copyright (c) 2016 Wojciech Sciesinski
     This function is licensed under The MIT License (MIT)
@@ -52,32 +67,45 @@
     [OutputType([System.Object[]])]
     
     Param (
-        [Parameter(Mandatory = $True, ValueFromPipeline = $True)]
-        [String[]]$UserName,
+		[Parameter(Mandatory = $True, ValueFromPipeline = $True)]
+		[alias("UserName")]
+        [String[]]$Identity,
         [Parameter(Mandatory = $false)]
-        [String]$FolderName = ".\"
+        [System.IO.DirectoryInfo]$FolderName
     )
     
-    begin {
+    Begin {
+	
+		If (!(Get-Module -name 'ActiveDirectory' -ErrorAction SilentlyContinue) ) {
+            
+            Import-Module -Name 'ActiveDirectory' -ErrorAction Stop | Out-Null
+            
+        }
+		
+		if (!$FolderName) {
+		
+			$FolderName = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath((Get-Location).Path)
+			
+		}
         
         $Results = @()
         
     }
     
-    process {
+    Process {
         
-        $UserName | ForEach-Object -Process {
+        $Identity | ForEach-Object -Process {
             
-            $CurrentUserName = $_
+            $CurrentUser = $_
             
             Try {
                 
-                $user = Get-ADUser $CurrentUserName -Properties thumbnailPhoto
+                $user = Get-ADUser $CurrentUser -Properties thumbnailPhoto
                 
             }
             Catch {
                 
-                [String]$MessageText = "Active Directory account for the user {0}" -f $CurrentUserName
+                [String]$MessageText = "Active Directory account for the user {0}" -f $CurrentUser
                 
                 Write-Warning -Message $MessageText
                 
@@ -94,8 +122,6 @@
                 [String]$UserPhotoFullFileName = "{0}\{1}.jpg" -f $FolderName, $CurrentUserName
                 
                 if ($user.thumbnailPhoto) {
-                    
-                    #   $user.thumbnailPhoto | Get-Member
                     
                     $user.thumbnailPhoto | Set-Content $UserPhotoFullFileName -Encoding byte
                     
