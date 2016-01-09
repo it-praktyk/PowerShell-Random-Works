@@ -116,6 +116,7 @@
     - 0.1.0 - 2016-01-06 - The first version
     - 0.2.0 - 2016-01-07 - The function renamed to Export-ADUserPhoto, the parameter UserName renamed to Identity
     - 0.3.0 - 2016-01-09 - The function extended, help updated
+    - 0.3.1 - 2016-01-10 - The type for parameter Identity corrected
 
     TODO
     - the situation of write to disk error should be handled
@@ -138,7 +139,6 @@
     Param (
         [Parameter(Mandatory = $True, ValueFromPipeline = $True)]
         [alias("UserName")]
-        [Microsoft.ActiveDirectory.Management.ADUser]
         $Identity,
         [Parameter(Mandatory = $false)]
         [System.IO.DirectoryInfo]$Path,
