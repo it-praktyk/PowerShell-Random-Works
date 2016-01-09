@@ -4,8 +4,8 @@
     Export the photos stored in an Active Directory and used by Outlook or Lync as users pictures.
         
     .DESCRIPTION
-    Reads the ThumbnailPhoto attribute of the specified user's Active
-    Directory account, and export the returned photo to jpg file named as the user SAMAccountName
+    Reads the ThumbnailPhoto attribute of the specified user's Active Directory account, 
+    and export the returned photo to jpg file named as the user SAMAccountName.
     
     .PARAMETER Identity
     Specifies an Active Directory user object by providing one of the following property values. The identifier in
@@ -100,8 +100,6 @@
 
     The identities of users from pipeline as Active Directory users objects, the result files named <SAMAccountName>.jpg saved in the current directory, without the prompt for overwrite.
     
-    Export the photo stored in the Active Directory for user account to jpg file".
-
     .LINK
     https://github.com/it-praktyk/Export-ADUserPhoto
     
@@ -117,6 +115,7 @@
     - 0.2.0 - 2016-01-07 - The function renamed to Export-ADUserPhoto, the parameter UserName renamed to Identity
     - 0.3.0 - 2016-01-09 - The function extended, help updated
     - 0.3.1 - 2016-01-10 - The type for parameter Identity corrected
+    - 0.3.2 - 2016-01-10 - Keywords updated, help corrected
 
     TODO
     - the situation of write to disk error should be handled
