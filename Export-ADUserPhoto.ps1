@@ -1,7 +1,7 @@
 ﻿Function Export-ADUserPhoto {
 <#
     .SYNOPSIS
-    Export the photos stored in an Active Directory and used by Outlook or Lync as users pictures.
+    Export the photos stored in an Active Directory and used by Outlook as users pictures/avatars and store them in jpg files.
         
     .DESCRIPTION
     Reads the ThumbnailPhoto attribute of the specified user's Active Directory account, 
@@ -36,9 +36,9 @@
     .EXAMPLE
     PS > Export-ADUserPhoto -Identity user1
     
-    UserSAMAccountName                                                PhotoExported            PhotoINActiveDirectoryExists
-    ------------------                                                -------------            ----------------------------
-    user1                                                                      True                                    True
+    UserSAMAccountName    PhotoINActiveDirectoryExists    PhotoExported
+    ------------------    ----------------------------    -------------
+    user1                                         True             True
     
     PS > Get-ChildItem -Path .\
     
@@ -58,11 +58,11 @@
     The file C:\Users\Administrator\Desktop\user1.jpg exist. Overwrite?
     [Y] Yes  [A] All  [N] No  [O] No for All  [C] Cancel  [?] Help (default is "Y"): y
 
-    UserSAMAccountName                                                PhotoExported            PhotoINActiveDirectoryExists
-    ------------------                                                -------------            ----------------------------
-    wojteks                                                                    True                                    True
-    YYYY                                                                       True                                    True
-    XXXX                                                                      False                                   False
+    UserSAMAccountName    PhotoINActiveDirectoryExists    PhotoExported
+    ------------------    ----------------------------    -------------
+    user1                                         True             True
+    YYYY                                          True             True
+	XXXX                                         False            False
     
     PS > Get-ChildItem -Path .\
     
@@ -79,14 +79,14 @@
     
     PS C:\Users\Administrator\Desktop> Get-ADUser -filter * | Export-ADUserPhoto -Force
 
-    UserSAMAccountName                                 PhotoINActiveDirectoryExists                           PhotoExported
-    ------------------                                 ----------------------------                           -------------
-    Guest                                                                      True                                    True
-    krbtgt                                                                    False                                   False
-    Administrator                                                             False                                   False
-    user1                                                                      True                                    True
-    XXXX                                                                      False                                   False
-    YYYY                                                                       True                                    True
+    UserSAMAccountName    PhotoINActiveDirectoryExists    PhotoExported
+    ------------------    ----------------------------    -------------
+    Guest                                         True             True
+    krbtgt                                       False            False
+    Administrator                                False            False
+    user1                                         True             True
+    XXXX                                         False            False
+    YYYY                                          True             True
 
     PS > Get-ChildItem -Path .\
     
@@ -108,7 +108,7 @@
           
     .NOTES
     AUTHOR: Wojciech Sciesinski, wojciech[at]sciesinski[dot]net
-    KEYWORDS: PowerShell
+    KEYWORDS: Windows, PowerShell, Exchange, email, thumbnailPhoto
    
     VERSIONS HISTORY
     - 0.1.0 - 2016-01-06 - The first version
@@ -116,9 +116,11 @@
     - 0.3.0 - 2016-01-09 - The function extended, help updated
     - 0.3.1 - 2016-01-10 - The type for parameter Identity corrected
     - 0.3.2 - 2016-01-10 - Keywords updated, help corrected
+	- 0.3.3 - 2016-01-10 - Description, help updated, examples reformatted
 
     TODO
     - the situation of write to disk error should be handled
+	- return results objects only if PassThru parameter provided (?)
             
     LICENSE
     Copyright (c) 2016 Wojciech Sciesinski
