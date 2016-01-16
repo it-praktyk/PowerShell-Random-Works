@@ -15,7 +15,7 @@ Currently supported cultures (in the alphabetical order):
 - en-US
 - pl-PL
 
-Information about culture files you can find [here](.\NAMES_SOURCES.md).
+Information about the culture files you can find [here](.\NAMES_SOURCES.md).
 
 
 ## PARAMETERS
@@ -59,17 +59,19 @@ KEYWORDS: PowerShell
 
 VERSIONS HISTORY
 - 0.1.1 - 2016-01-16 - The first version published as a part of the Doug's Finke NameIT PowerShell module https://github.com/dfinke/NameIT and included in the NameIT PowerShell module published to PowerShell Gallery with a version number 1.04 http://www.powershellgallery.com/packages/NameIT/1.04
-- 0.2.0 - 2016-01-16 - The function renamed from 'person' to New-RandomPerson, the names for pl-PL culture added, the structure for csv changed to support national charsets, the licence changed to MIT
+- 0.2.0 - 2016-01-16 - The function renamed from 'person' to New-RandomPerson, the names for pl-PL culture added, the structure for csv changed to support national charsets, the license changed to MIT
 - 0.3.0 - 2016-01-16 - The structure cultures files changes for support female/male last name grammar forms in some languages
+- 0.3.1 - 2016-01-16 - The help section updated
+- 0.4.0 - 2016-01-16 - The function corrected, situation where provided culture is incorrect handled
 
 
 TO DO
 - return output as an object
 - add support for culture data provided as variable
 
-LICENSE
-Copyright (c) 2016 Wojciech Sciesinski
-This function is licensed under The MIT License (MIT)
+LICENSE  
+Copyright (c) 2016 Wojciech Sciesinski  
+This function is licensed under The MIT License (MIT)  
 Full license text: http://opensource.org/licenses/MIT
 
 DISCLAIMER

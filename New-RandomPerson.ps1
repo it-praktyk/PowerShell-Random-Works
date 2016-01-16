@@ -50,11 +50,13 @@ function New-RandomPerson {
                            and included in the NameIT PowerShell module published to PowerShell Gallery with a version number  
                            1.04 http://www.powershellgallery.com/packages/NameIT/1.04
     - 0.2.0 - 2016-01-16 - The function renamed from 'person' to New-RandomPerson, the names for pl-PL culture added, 
-                           the structure for csv changed to support national charsets, the licence changed to MIT
+                           the structure for csv changed to support national charsets, the license changed to MIT
     - 0.3.0 - 2016-01-16 - The structure cultures files changes for support female/male last name grammar forms in some languages
-                           
+    - 0.3.1 - 2016-01-16 - The help section updated
+    - 0.4.0 - 2016-01-16 - The function corrected, situation where provided culture is incorrect handled
     
     TO DO
+    - add verbose output
     - return output as an object
     - add support for culture data provided as variable
     
@@ -71,6 +73,8 @@ function New-RandomPerson {
     or other pecuniary loss) arising out of the use of or inability to use the script or documentation. 
     
 #>    
+    [cmdletbinding()]
+    
     param (
         [parameter(Mandatory = $false)]
         [switch]$UseNationalCharset,
@@ -80,15 +84,35 @@ function New-RandomPerson {
         [String]$Culture = "en-US"
     )
     
-    $ModulePath = Split-Path $script:MyInvocation.MyCommand.Path
+    Try {
+        
+        $ModulePath = ([System.IO.FileInfo](get-module New-RandomPerson).Path | select directory).Directory.ToString()
+        
+    }
+    Catch {
+        
+        $ModulePath = Split-Path $script:MyInvocation.MyCommand.Path
+        
+    }
     
-    [String]$CultureFileName = "{0}\cultures\{1}.csv" -f $ModulePath, $Culture
-    
-    $AllNames = Import-Csv -Path $CultureFileName -Delimiter ","
-    
+    Try {
+        
+        [String]$CultureFileName = "{0}\cultures\{1}.csv" -f $ModulePath, $Culture
+        
+        $AllNames = Import-Csv -Path $CultureFileName -Delimiter ","
+        
+    }
+    Catch {
+        
+        [String]$MessageText = "The file {0}.csv can't not be find in the directory '{1}\cultures\' or the base folder for the function New-RandomPerson can't be recognized." -f $Culture, $ModulePath  
+
+        Throw $MessageText
+        
+    }
+        
     $AllNamesCount = ($AllNames | Measure-Object).Count
     
-    if ($UseNationalCharset.IsPresent) {
+    if ($UseNationalCharset.IsPresent -and $UseNationalCharset -ne $false ) {
         
         If ($Sex -eq "both") {
             
@@ -121,9 +145,7 @@ function New-RandomPerson {
     }
     Else {
         
-        $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].LastName
-        
-        If ($Sex = "both") {
+        If ($Sex -eq "both") {
             
             $RandomSex = (Get-Random @('Female', 'Male'))
             
@@ -136,7 +158,7 @@ function New-RandomPerson {
             $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].$LastNameFieldName
             
         }
-        elseif ($FirstName -eq "female") {
+        elseif ($Sex -eq "female") {
             
             $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].FemaleFirstName
             
