@@ -2,17 +2,21 @@ function New-RandomPerson {
     <#
     
     .SYNOPSIS
-    The function intended to generate string with name of a random person 
+    The function intended to generate string with name of a random person.
     
     .DESCRIPTION
-    The function generate a random name of females or mailes based on provided culture like <FirstName><Space><LastName>.
-    The first and last names are randomly selected from the file delivered with for the culture like en-US 
+    The function generate a random name of females or males based on selected culture in the format <FirstName><Space><LastName>.
+    The first and last names are randomly selected from the files delivered with the function for the selected culture (default is: en-US).
+
+    Currently supported cultures (in the alphabetical order):
+    - en-US
+    - pl-PL
     
     .PARAMETER UseNationalCharset
     If you would like use national diacritics.
     
     .PARAMETER Sex
-    The sex of random person.
+    The sex of random person. Available values: female, male, both.
     
     .PARAMETER Culture
     The culture used for generate - default is en-US.    
@@ -30,7 +34,7 @@ function New-RandomPerson {
     The one name returned with random sex.
     
     .EXAMPLE
-    [PS] > 1..3 | ForEach-Object -Process { New-RandoPerson -Sex female -culture en-US }
+    [PS] > 1..3 | ForEach-Object -Process { New-RandomPerson -Sex female -culture en-US }
     Jacqueline Walker
     Julie Richardson
     Stacey Powell
