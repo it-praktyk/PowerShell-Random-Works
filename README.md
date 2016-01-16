@@ -15,7 +15,9 @@ Currently supported cultures (in the alphabetical order):
 - en-US
 - pl-PL
 
-Information about the culture files you can find [here](.\NAMES_SOURCES.md).
+The goal for this function is preparing the list of users to fulfill Active Directory in lab environments.
+
+## Information about the culture files and information for the culture files Contributors you can find [here](\NAMES_SOURCES.md).
 
 
 ## PARAMETERS
@@ -68,6 +70,8 @@ VERSIONS HISTORY
 TO DO
 - return output as an object
 - add support for culture data provided as variable
+- add the list of cities for countries/cultures - in a separate files
+- add support for forms like 'Mr.' https://en.wikipedia.org/wiki/Mr. (?)
 
 LICENSE  
 Copyright (c) 2016 Wojciech Sciesinski  
