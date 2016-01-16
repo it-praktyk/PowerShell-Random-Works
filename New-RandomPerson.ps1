@@ -47,10 +47,12 @@ function New-RandomPerson {
                            1.04 http://www.powershellgallery.com/packages/NameIT/1.04
     - 0.2.0 - 2016-01-16 - The function renamed from 'person' to New-RandomPerson, the names for pl-PL culture added, 
                            the structure for csv changed to support national charsets, the licence changed to MIT
+    - 0.3.0 - 2016-01-16 - The structure cultures files changes for support female/male last name grammar forms in some languages
+                           
     
     TO DO
-    - extend csv file to support correct grammar forms of female last name in some countries (like in Poland)
     - return output as an object
+    - add support for culture data provided as variable
     
     LICENSE
 	Copyright (c) 2016 Wojciech Sciesinski
@@ -84,25 +86,31 @@ function New-RandomPerson {
     
     if ($UseNationalCharset.IsPresent) {
         
-        $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].LastNameNationalChars
-        
         If ($Sex -eq "both") {
             
             $RandomSex = (Get-Random @('Female', 'Male'))
             
             $FirstNameFieldName = "{0}FirstNameNationalChars" -f $RandomSex
             
+            $LastNameFieldName = "{0}LastNameNationalChars" -f $RandomSex
+            
             $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].$FirstNameFieldName
+            
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].$LastNameFieldName
             
         }
         elseif ($Sex -eq "female") {
             
             $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].FemaleFirstNameNationalChars
             
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].FemaleLastNameNationalChars
+            
         }
         else {
             
             $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].MaleFirstNameNationalChars
+            
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].MaleLastNameNationalChars
             
         }
         
@@ -117,18 +125,25 @@ function New-RandomPerson {
             
             $FirstNameFieldName = "{0}FirstName" -f $RandomSex
             
+            $LastNameFieldName = "{0}LastName" -f $RandomSex
+            
             $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].$FirstNameFieldName
             
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].$LastNameFieldName
             
         }
         elseif ($FirstName -eq "female") {
             
             $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].FemaleFirstName
             
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].FemaleLastName
+            
         }
         else {
             
             $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].MaleFirstName
+            
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].MaleLastName
             
         }
     }
