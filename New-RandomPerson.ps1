@@ -54,6 +54,7 @@ function New-RandomPerson {
     - 0.3.0 - 2016-01-16 - The structure cultures files changes for support female/male last name grammar forms in some languages
     - 0.3.1 - 2016-01-16 - The help section updated
     - 0.4.0 - 2016-01-16 - The function corrected, situation where provided culture is incorrect handled
+    - 0.4.1 - 2016-01-17 - UTF-8 encoding declared for the cultures files import added
     
     TO DO
     - add verbose output
@@ -99,7 +100,7 @@ function New-RandomPerson {
         
         [String]$CultureFileName = "{0}\cultures\{1}.csv" -f $ModulePath, $Culture
         
-        $AllNames = Import-Csv -Path $CultureFileName -Delimiter ","
+        $AllNames = Import-Csv -Path $CultureFileName -Delimiter "," -Encoding UTF8
         
     }
     Catch {
