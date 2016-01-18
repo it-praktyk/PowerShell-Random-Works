@@ -55,6 +55,7 @@ function New-RandomPerson {
     - 0.3.1 - 2016-01-16 - The help section updated
     - 0.4.0 - 2016-01-16 - The function corrected, situation where provided culture is incorrect handled
     - 0.4.1 - 2016-01-17 - UTF-8 encoding declared for the cultures files import added
+    - 0.4.2 - 2016-01-18 - Incorrect usage the cmdlet Get-Random corrected
     
     TO DO
     - add verbose output
@@ -123,23 +124,23 @@ function New-RandomPerson {
             
             $LastNameFieldName = "{0}LastNameNationalChars" -f $RandomSex
             
-            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].$FirstNameFieldName
+            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].$FirstNameFieldName
             
-            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].$LastNameFieldName
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].$LastNameFieldName
             
         }
         elseif ($Sex -eq "female") {
             
-            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].FemaleFirstNameNationalChars
+            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].FemaleFirstNameNationalChars
             
-            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].FemaleLastNameNationalChars
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].FemaleLastNameNationalChars
             
         }
         else {
             
-            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].MaleFirstNameNationalChars
+            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].MaleFirstNameNationalChars
             
-            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].MaleLastNameNationalChars
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].MaleLastNameNationalChars
             
         }
         
@@ -154,23 +155,23 @@ function New-RandomPerson {
             
             $LastNameFieldName = "{0}LastName" -f $RandomSex
             
-            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].$FirstNameFieldName
+            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].$FirstNameFieldName
             
-            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].$LastNameFieldName
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].$LastNameFieldName
             
         }
         elseif ($Sex -eq "female") {
             
-            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].FemaleFirstName
+            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].FemaleFirstName
             
-            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].FemaleLastName
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].FemaleLastName
             
         }
         else {
             
-            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].MaleFirstName
+            $FirstName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].MaleFirstName
             
-            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum ($AllNamesCount - 1))].MaleLastName
+            $LastName = $AllNames[(Get-Random -Minimum 0 -Maximum $AllNamesCount )].MaleLastName
             
         }
     }
