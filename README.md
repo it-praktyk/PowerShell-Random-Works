@@ -51,9 +51,6 @@ Accept pipeline input?       false
 Accept wildcard characters?  false
 ```
 
-## INPUTS
-
-
 ## NOTES
 AUTHOR: Wojciech Sciesinski, wojciech[at]sciesinski[dot]net
 
@@ -65,6 +62,9 @@ VERSIONS HISTORY
 - 0.3.0 - 2016-01-16 - The structure cultures files changes for support female/male last name grammar forms in some languages
 - 0.3.1 - 2016-01-16 - The help section updated
 - 0.4.0 - 2016-01-16 - The function corrected, situation where provided culture is incorrect handled
+- 0.4.1 - 2016-01-17 - UTF-8 encoding declared for the cultures files import added
+- 0.4.2 - 2016-01-18 - Incorrect usage the cmdlet Get-Random corrected
+- 0.5.0 - 2016-01-19 - The function output returned as an object, help updated
 
 
 TO DO
@@ -85,9 +85,11 @@ performance of the sample scripts and documentation remains with you. In no even
 ## EXAMPLES
 ### EXAMPLE 1
 ```powershell
-[PS] >New-RandomPerson
+[PS] > New-RandomPerson
 
-Justin Carter
+FirstName LastName DisplayName  Sex
+--------- -------- -----------  ---
+Jamie     Torres   Jamie Torres Female
 
 The one name returned with random sex.
 ```
@@ -95,11 +97,27 @@ The one name returned with random sex.
 
 ### EXAMPLE 2
 ```powershell
-[PS] >1..3 | ForEach-Object -Process { New-RandomPerson -Sex female -culture en-US }
+[PS] > 1..3 | ForEach-Object -Process { New-RandomPerson -Sex both -culture en-US }
 
-Jacqueline Walker
-Julie Richardson
-Stacey Powell
+FirstName LastName  DisplayName       Sex
+--------- --------  -----------       ---
+Carrie    Ross      Carrie Ross       Female
+Vincent   Gutierrez Vincent Gutierrez Male
+Jared     Ramirez   Jared Ramirez     Male
 
-Three names returned, only women, from en-US culture
+Three names returned, from en-US culture.
+```
+
+
+### EXAMPLE 3
+```powershell
+[PS] > 1..3 | ForEach-Object -Process { New-RandomPerson -Sex Male -culture pl-PL -UseNationalCharset }
+
+FirstName LastName  DisplayName     Sex
+--------- --------  -----------     ---
+Jacek     Kozłowski Jacek Kozłowski Male
+Szymon    Michalak  Szymon Michalak Male
+Eryk      Rutkowski Eryk Rutkowski  Male
+
+Three names returned, only mens, from pl-PL culture with Polish diacritics.
 ```
