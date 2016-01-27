@@ -1,0 +1,12 @@
+Paramters
+-LabSetName
+-LabScenario
+-Credentials
+
+
+Scenarios
+- full
+- default
+- minimal
+- number-based
+
