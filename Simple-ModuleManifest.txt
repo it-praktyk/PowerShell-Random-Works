@@ -1,0 +1,23 @@
+#Based on http://www.petri.com/how-to-create-a-powershell-module.htm
+
+$ModuleDirectory = 
+
+$ModuleName = "TestModule"
+	
+$guid = [guid]::NewGuid().guid
+
+$paramHash = @{
+Path =  $($path.fullname) = ' \ ' $ModuleName + '.psd1'
+RootModule = $ModuleName
+Author = "Wojciech Sciesinski - wojciech[at]sciesinski[dot]net"
+ModuleVersion = "0.1"
+Guid = $guid
+PowerShellVersion = "2.0"
+Description = "Modules to batch manage Exchange objects"
+FunctionsToExport = "Main.ps1"
+AliasesToExport = ""
+VariablesToExport = ""
+CmdletsToExport = ""
+}
+
+New-ModuleManifest @paramHash
