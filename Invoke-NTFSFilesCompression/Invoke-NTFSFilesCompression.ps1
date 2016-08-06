@@ -2,38 +2,57 @@
 Function Invoke-NTFSFilesCompression {
 
   <#
-  .SYNOPSIS
-   Compress files with given extention older than given amount of time
-  .DESCRIPTION
-   The function is intended for compressing (using the NTFS compression) all files with particular extensions older than given time unit
-  .EXAMPLE
-   Compress files with extension log in folder c:\test that are older than 20 minutes
-   Invoke-NTFSFilesCompression -Path C:\test -OlderThan 20
-  .EXAMPLE
-   Compress files with extension txt in folder c:\test that are older than 1 hour
-   Invoke-NTFSFilesCompression -Path C:\test -OlderThan 1 -TimeUnit hours -Extension "txt"
-  .PARAMETER Path
-  The folder path that contain files. Folder path can be pipelined.
-  .PARAMETER $OlderThan
-   The count of units that are base to comparison file age.
-  .PARAMETER TimeUnit
-   The unit of time that are used to count. The default time unit are minutes.
-  .PARAMETER Extension
-   The extention of files that will be processed. The default file extenstion is "log".
-  .NOTES
-   AUTHOR: Wojciech Sciesinski, wojciech@sciesinski.net
-   LICENSE: This code is licensed under GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 http://www.gnu.org/licenses/gpl-3.0.txt
-   KEYWORDS: NTFS, compression, PowerShell
-   LASTEDIT: 2013-10-08
-   VERSION HISTORY
-   1.0.0 - 2013-10-04 - Initial edition
-   1.0.1 - 2013-10-08 - Function renamed from Start-NTFSFilesCompression to Invoke-NTFSFilesCompression
-   1.0.2 - 2013-10-08 - Information about licensing added, keywords extended 
+    .SYNOPSIS
+    Compress files with given extention older than given amount of time
+   
+    .DESCRIPTION
+    The function is intended for compressing (using the NTFS compression) all files with particular extensions older than given time unit
+  
+    .PARAMETER Path
+    The folder path that contain files. Folder path can be pipelined.
+  
+    .PARAMETER $OlderThan
+    The count of units that are base to comparison file age.
+  
+    .PARAMETER TimeUnit
+    The unit of time that are used to count. The default time unit are minutes.
+  
+    .PARAMETER Extension
+    The extention of files that will be processed. The default file extenstion is "log".
+
+    .EXAMPLE
+    Compress files with extension log in folder c:\test that are older than 20 minutes
+    Invoke-NTFSFilesCompression -Path C:\test -OlderThan 20
+  
+    .EXAMPLE
+    Compress files with extension txt in folder c:\test that are older than 1 hour
+    Invoke-NTFSFilesCompression -Path C:\test -OlderThan 1 -TimeUnit hours -Extension "txt"
+    
+    .LINK
+    https://github.com/it-praktyk/PowerShell-Random-Works
+    
+    .LINK
+    https://www.linkedin.com/in/sciesinskiwojciech
+    
+    .NOTES
+    AUTHOR: Wojciech Sciesinski, wojciech[at]sciesinski[dot]net
+    KEYWORDS: NTFS, compression, PowerShell
+    
+    VERSION HISTORY
+    - 1.0.0 - 2013-10-04 - Initial edition
+    - 1.0.1 - 2013-10-08 - Function renamed from Start-NTFSFilesCompression to Invoke-NTFSFilesCompression
+    - 1.0.2 - 2013-10-08 - Information about licensing added, keywords extended 
+    - 1.1.0 - 2016-08-06 - Moved from repository https://github.com/it-praktyk/Invoke-NTFSFilesCompression to https://github.com/it-praktyk/PowerShell-Random-Works
+                           Old repository data in git-old.7z file, license changed to MIT
+                           
+    LICENSE  
+    Copyright (c) 2016 Wojciech Sciesinski  
+    This function is licensed under The MIT License (MIT)  
+    Full license text: https://opensource.org/licenses/MIT  
+        
   #>
 
-  [CmdletBinding(
-  SupportsShouldProcess=$true
-  )]
+  [CmdletBinding(SupportsShouldProcess=$true)]
 
  Param (
 
