@@ -1,0 +1,9 @@
+Restore-VMPermission.ps1
+downloaded from
+https://onedrive.live.com/?cid=9bfce0941114c6e8&id=9BFCE0941114C6E8!13252&authkey=!ACsbIC9ezwzD9-w
+last checked: 2015-01-18
+
+Get-VMNetworkConfiguration.ps1
+downloaded from
+http://www.ravichaganti.com/blog/get-hyper-v-windows-server-2012-guest-network-configuration-using-wmi/
+last checked: 2015-01-18

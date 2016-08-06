@@ -1,0 +1,47 @@
+<#
+
+	.SYNOPSIS
+	Script intended to export Hyper-V based lab machine in order
+
+	.DESCRIPTION
+
+	.EXAMPLE
+
+	.PARAMETER LabName
+	Will be filled after converting to function
+	
+	.FilePath
+	Will be filled after converting to function
+
+	.NOTES
+
+	AUTHOR: Wojciech Sciesinski, wojciech[at]sciesinski[dot]net
+		
+	KEYWORDS: Hyper-V, PowerShell
+   
+	BASEREPOSITORY: https://github.com/it-praktyk/HyperV-lab-utils
+
+	VERSION HISTORY
+	0.1 - 2015-01-18 - first draft, need to be verified
+
+
+#>
+
+
+$vmServer=localhost
+$vmPrefix="EX2013"
+$exportPath="d:\export"
+$exportPathLocal=$true
+$compressAfter=$false
+$fullExport=$true
+
+
+#import-module hyperv
+
+$vMachines = get-vm -Server $vmServer | where-Object { $_.Name -like $vmPrefix }
+
+ForEach ($vm in $vMachines) {
+
+	export-VM -vm $vm -Server $vmServer -CopyState:$fullExport -Wait:$true -Force$true
+
+}
