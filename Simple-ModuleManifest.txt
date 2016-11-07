@@ -1,20 +1,28 @@
 #Based on http://www.petri.com/how-to-create-a-powershell-module.htm
 
-$ModuleDirectory = 
-
 $ModuleName = "TestModule"
-	
+
+If ( -not $(Test-Path -Path "..\$ModuleName" -PathType Container) ) { 
+
+	Throw "Please run that code inside module $ModuleName directory."
+
+}
+
+$ModuleDirectory = Get-Item -Path "..\$ModuleName\"
+
+[String]$ModuleManifestPath = "{0}\{1}.psd1" -f $ModuleDirectory, $ModuleName
+
 $guid = [guid]::NewGuid().guid
 
 $paramHash = @{
-Path =  $($path.fullname) = ' \ ' $ModuleName + '.psd1'
+Path = $ModuleManifestPath
 RootModule = $ModuleName
 Author = "Wojciech Sciesinski - wojciech[at]sciesinski[dot]net"
 ModuleVersion = "0.1"
 Guid = $guid
 PowerShellVersion = "2.0"
-Description = "Modules to batch manage Exchange objects"
-FunctionsToExport = "Main.ps1"
+Description = "Module to prepare the new PowerShell objects references for creating new "
+FunctionsToExport = "" 	
 AliasesToExport = ""
 VariablesToExport = ""
 CmdletsToExport = ""
