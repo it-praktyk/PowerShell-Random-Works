@@ -27,6 +27,11 @@ Function Invoke-NTFSFilesCompression {
     .EXAMPLE
     Compress files with extension txt in folder c:\test that are older than 1 hour
     Invoke-NTFSFilesCompression -Path C:\test -OlderThan 1 -TimeUnit hours -Extension "txt"
+
+    .EXAMPLE
+    Recursively compress fiels in all subfolders (one level only of nesting)
+
+    PS> Get-ChildItem -Path C:\inetpub\logs\LogFiles\ -Directory | foreach { Invoke-NTFSFilesCompression -Path $_.fullname -OlderThan 30 -TimeUnit days -Extension log -Verbose }
     
     .LINK
     https://github.com/it-praktyk/PowerShell-Random-Works
@@ -44,12 +49,16 @@ Function Invoke-NTFSFilesCompression {
     - 1.0.2 - 2013-10-08 - Information about licensing added, keywords extended 
     - 1.1.0 - 2016-08-06 - Moved from repository https://github.com/it-praktyk/Invoke-NTFSFilesCompression to https://github.com/it-praktyk/PowerShell-Random-Works
                            Old repository data in git-old.7z file, license changed to MIT
+    - 1.1.1 - 2017-03-26 - Example added. TODO added
                            
     LICENSE  
     Copyright (c) 2016 Wojciech Sciesinski  
     This function is licensed under The MIT License (MIT)  
     Full license text: https://opensource.org/licenses/MIT  
-        
+    
+    TODO
+    - add suport for recurse by folder structure (?)
+
   #>
 
   [CmdletBinding(SupportsShouldProcess=$true)]
