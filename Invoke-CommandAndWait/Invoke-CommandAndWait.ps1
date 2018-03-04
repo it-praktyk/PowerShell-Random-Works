@@ -7,23 +7,8 @@ Function Invoke-CommandAndWait {
     .DESCRIPTION
     Function used to execute external command (e.g. updates exe files) and wait for completion.
 
-    .EXAMPLE
-    Invoke-CommandAndWait -ExecutionFileName notepad.exe -CheckedProcessName notepad -ExecutionFilePath c:\windows\system32 -ExpectedDurationTimeMinutes 2 `
-    -UpdateProgressBarIntervalSeconds 5 -ExecuteCommandAfterCompletion "calc.exe"
-
-    Run notepad.exe file, check every 5 seconds if still is running. After closing notepad.exe run calc.exe
-
-    .EXAMPLE
-    Import-CSV -Path .\commands.txt | ForEach { Invoke-CommandAndWait -ExecutionFileName $_.FileName -CheckedProcessName $_.CheckedProcessName -ExecutionFilePath $_.CheckedProcessName `
-    -ExpectedDurationTimeMinutes 2 -UpdateProgressBarIntervalSeconds 10 }
-
-    Import command from the csv file, run them sequentially with updateing progress every 10 seconds
-
     .PARAMETER ExecutionFileName
     Command what need to be run - e.g. notepad.exe
-
-    .PARAMETER CheckedProcessName
-    Process name to check - for exe file file name without extension generally is used.
 
     .PARAMETER ExecutionParameters
     Parameters that will added to runned application.
@@ -34,107 +19,145 @@ Function Invoke-CommandAndWait {
     .PARAMETER ExecuteCommandAfterCompletion
     Command to executed after main task is completed
 
+    .PARAMETER Quiet
+    When the parameter Quiet is used a progress indicator will not be displayed. A progress indicator is displayed by default.
+
     .PARAMETER ExpectedDurationTime
     Expected time to run a command - used only for progress bar.
 
-    .PARAMETER $UpdateProgressBarIntervalSeconds
+    .PARAMETER UpdateProgressBarIntervalSeconds
     How often progress bar will be updated
+
+    .EXAMPLE
+    Invoke-CommandAndWait -ExecutionFileName notepad.exe -ExecutionFilePath c:\windows\system32 -ExpectedDurationTimeMinutes 2 `
+    -UpdateProgressBarIntervalSeconds 5 -ExecuteCommandAfterCompletion "calc.exe"
+
+    Run notepad.exe file, check every 5 seconds if still is running. After closing notepad.exe run calc.exe
+
+    .EXAMPLE
+    Import-CSV -Path .\commands.txt | ForEach { Invoke-CommandAndWait -ExecutionFileName $_.FileName -ExecutionFilePath $_.CheckedProcessName `
+    -ExpectedDurationTimeMinutes 2 -UpdateProgressBarIntervalSeconds 10 }
+
+    Import command from the csv file, run them sequentially with updateing progress every 10 seconds
 
     .NOTES
     AUTHOR: Wojciech Sciesinski, wojciech[at]sciesinski[dot]net
-    KEYWORDS: PowerShell,
+    KEYWORDS: PowerShell
 
     VERSION HISTORY
     - 0.4.0 - 2016-08-23 - The first version published to GitHub specially for Giancarlo P.
     - 0.4.1 - 2018-03-03 - Formats updated
+    - 0.5.0 - 2018-03-04 - Added the quiet parameter, updated errors handling, help updated
+                            The parameter CheckedProcessName removed
 
     TODO
     - use scriptblock except strings to provide commands to execute
-    - replace Invoke-WmiMethod
+    - replace Invoke-WmiMethod (?)
 
     LICENSE
     Copyright (c) 2016 Wojciech Sciesinski
     This function is licensed under The MIT License (MIT)
     Full license text: https://opensource.org/licenses/MIT
 
-    #>
+#>
 
-    [cmdletbinding()]
+    [cmdletbinding(DefaultParameterSetName='WriteProgressParamSet')]
 
     Param (
 
-    [Parameter(mandatory=$true,ValueFromPipeline=$false,Position=0)]
-    [String]$ExecutionFileName,
+        [Parameter(mandatory=$true)]
+        [String]$ExecutionFileName,
 
-    [Parameter(mandatory=$true,ValueFromPipeline=$false,Position=1)]
-    [String]$CheckedProcessName,
+        [Parameter(mandatory=$false)]
+        [String]$ExecutionParameters,
 
-    [Parameter(mandatory=$false,ValueFromPipeline=$false,Position=2)]
-    [String]$ExecutionParameters,
+        [Parameter(mandatory=$false)]
+        [String]$ExecutionFilePath=".\",
 
-    [Parameter(mandatory=$false,ValueFromPipeline=$false)]
-    [String]$ExecutionFilePath=".\",
+        [Parameter(mandatory=$false)]
+        [String]$ExecuteCommandAfterCompletion,
 
-    [Parameter(mandatory=$false,ValueFromPipeline=$false)]
-    [String]$ExecuteCommandAfterCompletion,
+        [Parameter(mandatory=$false,ParameterSetName='QuietParamSet')]
+        [Switch]$Quiet,
 
-    [Parameter(mandatory=$false,Position=3)]
-    [int]$ExpectedDurationTimeMinutes=5,
+        [Parameter(mandatory=$false,ParameterSetName='WriteProgressParamSet')]
+        [int]$ExpectedDurationTimeMinutes=5,
 
-    [Parameter(mandatory=$false)]
-    [int]$UpdateProgressBarIntervalSeconds=10
+        [Parameter(mandatory=$false,ParameterSetName='WriteProgressParamSet')]
+        [int]$UpdateProgressBarIntervalSeconds=10
 
     )
 
-BEGIN {
+    BEGIN {
 
-    $Wait = $true
+        $Wait = $true
 
-    If (-not ([String]::IsNullOrEmpty($ExecutionParameters))) {
+        if ([String]::IsNullOrEmpty($ExecutionParameters)) {
 
-        [String]$CommandToRun = "$ExecutionFilePath\$ExecutionFileName"
+            [String]$CommandToRun = "{0}\{1}" -f $ExecutionFilePath, $ExecutionFileName
+
+        }
+        else {
+
+            [String]$CommandToRun = "{0}\{1} {2}" -f $ExecutionFilePath, $ExecutionFileName, $ExecutionParameters
+
+        }
+
+        [System.String]$MessageString = "Command to run: {0}" -f $CommandToRun
+
+        Write-Verbose  -Message $MessageString
+
+        [int]$i=$UpdateProgressBarIntervalSeconds
 
     }
-    Else {
 
-        [String]$CommandToRun = "$ExecutionFilePath\$ExecutionFileName $ExecutionParameters"
-    }
-
-    [System.String]$MessageString = "Command to run: {0}" -f $CommandToRun
-
-    Write-Verbose  -Message $MessageString
-
-    [int]$i=$UpdateProgressBarIntervalSeconds
-
-}
-
-PROCESS {
+    PROCESS {
 
         $process = Invoke-WmiMethod -Class win32_process -Name create -ArgumentList $CommandToRun
 
+        if ( $process.ProcessId -eq $null ) {
 
-        While ($Wait) {
+            [String]$MessageString = "Under of executing the command {0} an error occured." -f $CommandToRun
 
-            if (Get-Process -Id $process.ProcessId -ErrorAction SilentlyContinue) {
+            Write-Error -Message $MessageString
 
-                Write-Progress -Activity "Executed file $ExecutionFileName" -PercentComplet (($i / ($ExpectedDurationTimeMinutes * 60)) * 100) -Status " is still running"
+        }
+        else {
 
-                Start-Sleep -s $UpdateProgressBarIntervalSeconds
+            While ($Wait) {
 
-                if (($i += $UpdateProgressBarIntervalSeconds) -ge ($ExpectedDurationTimeMinutes * 60)) {
+                if (Get-Process -Id $process.ProcessId -ErrorAction SilentlyContinue) {
 
-                    $i = $UpdateProgressBarIntervalSeconds
+                    if ( $PSCmdlet.ParameterSetName -ne 'QuietParamSet' ) {
+
+                        Write-Progress -Activity "Executed file $ExecutionFileName" -PercentComplet (($i / ($ExpectedDurationTimeMinutes * 60)) * 100) -Status " is still running"
+
+                        Start-Sleep -Seconds $UpdateProgressBarIntervalSeconds
+
+                        if (($i += $UpdateProgressBarIntervalSeconds) -ge ($ExpectedDurationTimeMinutes * 60)) {
+
+                            $i = $UpdateProgressBarIntervalSeconds
+
+                        }
+                        else {
+
+                            $i += $UpdateProgressBarIntervalSeconds
+
+                        }
+
+                    }
+                    else {
+
+                        Start-Sleep -Seconds 5
+
+                    }
+
                 }
-                Else {
+                else {
 
-                    $i += $UpdateProgressBarIntervalSeconds
+                    $Wait = $false
 
                 }
-
-            }
-            Else {
-
-                $Wait = $false
 
             }
 
@@ -144,12 +167,20 @@ PROCESS {
 
     END {
 
-        If ($ExecuteCommandAfterCompletion) {
+        if ($ExecuteCommandAfterCompletion) {
 
-            $process = Invoke-WmiMethod -Class win32_process -Name create -ArgumentList $ExecuteCommandAfterCompletion
+            $afterprocess = Invoke-WmiMethod -Class win32_process -Name create -ArgumentList $ExecuteCommandAfterCompletion
+
+            if ( $null -eq $afterprocess.ProcessId ) {
+
+                [String]$MessageString = "Under of executing the command {0} an error occured." -f $ExecuteCommandAfterCompletion
+
+                Write-Error -Message $MessageString
+
+            }
 
         }
 
-}
+    }
 
 }
