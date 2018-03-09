@@ -25,18 +25,18 @@ Function Invoke-CommandAndWait {
     .PARAMETER ExpectedDurationTime
     Expected time to run a command - used only for progress bar.
 
-    .PARAMETER UpdateProgressBarIntervalSeconds
+    .PARAMETER CheckProgressInterval
     How often progress bar will be updated
 
     .EXAMPLE
     Invoke-CommandAndWait -ExecutionFileName notepad.exe -ExecutionFilePath c:\windows\system32 -ExpectedDurationTimeMinutes 2 `
-    -UpdateProgressBarIntervalSeconds 5 -ExecuteCommandAfterCompletion "calc.exe"
+    -CheckProgressInterval 5 -ExecuteCommandAfterCompletion "calc.exe"
 
     Run notepad.exe file, check every 5 seconds if still is running. After closing notepad.exe run calc.exe
 
     .EXAMPLE
     Import-CSV -Path .\commands.txt | ForEach { Invoke-CommandAndWait -ExecutionFileName $_.FileName -ExecutionFilePath $_.CheckedProcessName `
-    -ExpectedDurationTimeMinutes 2 -UpdateProgressBarIntervalSeconds 10 }
+    -ExpectedDurationTimeMinutes 2 -CheckProgressInterval 10 }
 
     Import command from the csv file, run them sequentially with updateing progress every 10 seconds
 
@@ -49,6 +49,8 @@ Function Invoke-CommandAndWait {
     - 0.4.1 - 2018-03-03 - Formats updated
     - 0.5.0 - 2018-03-04 - Added the quiet parameter, updated errors handling, help updated
                             The parameter CheckedProcessName removed
+    - 0.6.0 - 2018-03-09 - The parameter renamed UpdateProgressBarIntervalSeconds to CheckProgressInterval,
+                            an interval to recheck of statuses decreased to 1 second
 
     TODO
     - use scriptblock except strings to provide commands to execute
@@ -77,14 +79,15 @@ Function Invoke-CommandAndWait {
         [Parameter(mandatory=$false)]
         [String]$ExecuteCommandAfterCompletion,
 
+        [Parameter(mandatory=$false)]
+        [Alias('UpdateProgressBarIntervalSeconds')]
+        [int]$CheckProgressInterval=1,
+
         [Parameter(mandatory=$false,ParameterSetName='QuietParamSet')]
         [Switch]$Quiet,
 
         [Parameter(mandatory=$false,ParameterSetName='WriteProgressParamSet')]
-        [int]$ExpectedDurationTimeMinutes=5,
-
-        [Parameter(mandatory=$false,ParameterSetName='WriteProgressParamSet')]
-        [int]$UpdateProgressBarIntervalSeconds=10
+        [int]$ExpectedDurationTimeMinutes=5
 
     )
 
@@ -107,7 +110,7 @@ Function Invoke-CommandAndWait {
 
         Write-Verbose  -Message $MessageString
 
-        [int]$i=$UpdateProgressBarIntervalSeconds
+        [int]$i=$CheckProgressInterval
 
     }
 
@@ -132,23 +135,23 @@ Function Invoke-CommandAndWait {
 
                         Write-Progress -Activity "Executed file $ExecutionFileName" -PercentComplet (($i / ($ExpectedDurationTimeMinutes * 60)) * 100) -Status " is still running"
 
-                        Start-Sleep -Seconds $UpdateProgressBarIntervalSeconds
+                        Start-Sleep -Seconds $CheckProgressInterval
 
-                        if (($i += $UpdateProgressBarIntervalSeconds) -ge ($ExpectedDurationTimeMinutes * 60)) {
+                        if (($i += $CheckProgressInterval) -ge ($ExpectedDurationTimeMinutes * 60)) {
 
-                            $i = $UpdateProgressBarIntervalSeconds
+                            $i = $CheckProgressInterval
 
                         }
                         else {
 
-                            $i += $UpdateProgressBarIntervalSeconds
+                            $i += $CheckProgressInterval
 
                         }
 
                     }
                     else {
 
-                        Start-Sleep -Seconds 5
+                        Start-Sleep -Seconds $CheckProgressInterval
 
                     }
 
