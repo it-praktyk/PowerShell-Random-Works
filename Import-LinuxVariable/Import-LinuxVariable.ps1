@@ -39,7 +39,8 @@ Function Import-LinuxVariable {
     KEYWORDS: PowerShell, Linux, source, variables
 
     VERSIONS HISTORY
-    0.1.0 -  2018-02-19 - The initial version
+    0.1.0 - 2018-02-19 - The initial version
+    0.2.0 - 2018-03-25 - Bugs corrected
 
     TODO
 
@@ -60,11 +61,11 @@ Function Import-LinuxVariable {
     )
 
 
-    [String[]]$Variables = $(Get-Content -Path .\variables.sh | Select-String -Pattern "export\ ")
+    [String[]]$Variables = $(Get-Content -Path .\variables.sh | Select-String -Pattern 'export ')
 
     ForEach ( $Variable in $Variables) {
 
-        $TrimedLine = $Variable.Replace('export $','').Trim()
+        $TrimedLine = $Variable.Replace('export ','').Trim()
 
         Try {
 
