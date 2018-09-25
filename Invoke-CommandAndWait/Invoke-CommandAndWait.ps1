@@ -51,6 +51,7 @@ Function Invoke-CommandAndWait {
                             The parameter CheckedProcessName removed
     - 0.6.0 - 2018-03-09 - The parameter renamed UpdateProgressBarIntervalSeconds to CheckProgressInterval,
                             an interval to recheck of statuses decreased to 1 second
+    - 0.7.0 - 2018-09-25 - Ignore errors triggered by non-existing process
 
     TODO
     - use scriptblock except strings to provide commands to execute
@@ -129,7 +130,7 @@ Function Invoke-CommandAndWait {
 
             While ($Wait) {
 
-                if (Get-Process -Id $process.ProcessId -ErrorAction SilentlyContinue) {
+                if (Get-Process -Id $process.ProcessId -ErrorAction Ignore) {
 
                     if ( $PSCmdlet.ParameterSetName -ne 'QuietParamSet' ) {
 
