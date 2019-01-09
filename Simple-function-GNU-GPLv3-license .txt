@@ -1,0 +1,91 @@
+﻿Function <SIMPLE-FUNCTION> {
+<#
+    .SYNOPSIS
+    Function intended for 
+   
+    .DESCRIPTION
+    
+    .PARAMETER FirstParameter
+    
+    .OUTPUTS
+    System.Object[]
+  
+    .EXAMPLE
+     
+    .LINK
+    https://github.com/it-praktyk/<BASE_REPOSITORY_URL>
+    
+    .LINK
+    https://www.linkedin.com/in/sciesinskiwojciech
+          
+    .NOTES
+    AUTHOR: Wojciech Sciesinski, wojciech[at]sciesinski[dot]net
+    KEYWORDS: PowerShell
+   
+    VERSIONS HISTORY
+    0.1.0 -  2016-0x-xx - Short notes about version
+
+    TODO
+        
+    LICENSE
+    Copyright (C) 2016 Wojciech Sciesinski
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>
+    
+    TEMPLATE NAME: Simple function - GNU GPLv3
+    TEMPLATE BASE - Simple function - MIT-License 0.1.2
+    TEMPLATE VERSION 
+    - 0.1.0 - 2015-03-14 - Initial release
+    - 0.1.2 - 2016-01-04 - OutputType added, reformatted
+	- 0.1.3 - 2016-02-28 - Small correction of VERSIONS section
+
+    
+    
+   
+#>
+
+[CmdletBinding()] 
+[OutputType([System.Object[]])]
+
+param(
+
+    [parameter(mandatory=$false)]
+    FirstParameter
+
+    #more about parameters 
+    #about_Functions_Advanced_Parameters
+    #https://technet.microsoft.com/en-us/library/hh847743.aspx
+
+)
+
+BEGIN {
+
+    $Results=@()
+
+}
+
+PROCESS {
+
+
+    $Result = New-Object PSObject
+    $Result | Add-Member -type NoteProperty -name FirstPropertyName -value $FirstPropertyName
+    
+    $Results+=$Result
+
+}
+
+END {
+
+    Return $Results
+
+}
+
+}
