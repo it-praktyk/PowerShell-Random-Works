@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+
+<Updates>
+
+   <Description>Recommended hotfixes and updates for Windows Server 2012-based Failover Clusters</Description>
+
+   <LastUpdated>2014-02-27</LastUpdated>
+
+   <Source>http://support.microsoft.com/kb/2784261/en-us</Source>
+   
+   <Update id="KB2881151">
+   
+		<Description>2014-02-12 Cluster group that has dependent resources does not fail over on a Windows Server 2012-based or Windows Server 2008 SP2-based computer</Description>
+		
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix484122/9200/free/470445_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
+   
+   </Update>
+   
+   <Update id="KB2919393">
+   
+		<Description>2014-02-12 Windows RT, Windows 8, and Windows Server 2012 update rollup: February 2014</Description>
+		
+		<DownloadURL>http://download.microsoft.com/download/4/5/2/452830FF-AE39-44E5-8988-AF0AC50FF28D/Windows8-RT-KB2919393-x64.msu</DownloadURL>
+		
+		<Notes></Notes>
+   
+   </Update>
+
+   <Update id="KB2911101">
+
+		<Description>2014-01-14 Windows RT, Windows 8, and Windows Server 2012 update rollup: January 2014</Description>
+
+		<DownloadURL>http://download.microsoft.com/download/9/4/3/943DC480-5B38-499D-A4C8-7ECE87DA9058/Windows8-RT-KB2911101-x64.msu</DownloadURL>
+
+		<Notes>Include KB2876391</Notes>
+
+	</Update>
+
+   <Update id="KB2878635">
+
+		<Description>2013-12-23 Update is available that improves the resiliency of the cloud service provider in Windows Server 2012: December 2013</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix474423/9200/free/466682_intl_x64_zip.exe</DownloadURL>
+
+		<Notes>This update replace update KB2870270, include also updates KB2869923, KB2908415 </Notes>
+
+	</Update>
+
+   <Update id="KB2905249">
+
+		<Description>2013-12-12 "0x8007007A" error when you migrate a virtual machine that's running Windows Server 2012</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix465715/9200/free/470064_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update id="KB2779069">
+
+		<Description>2013-12-12 A hotfix is available that adds two new cluster control codes to help you determine which cluster node is blocking a GUM update in Windows Server 2008 R2 and Windows Server 2012</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix475826/9200/free/468937_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update> 	
+
+	<Update id="KB2903938">
+
+		<Description>2013-12-10 Windows RT, Windows 8, and Windows Server 2012 update rollup: December 2013</Description>
+
+		<DownloadURL>http://download.microsoft.com/download/7/A/B/7AB09DBA-BA40-44A5-A1DD-87EBBE9A854C/Windows8-RT-KB2903938-x64.msu</DownloadURL>
+
+		<Notes>Include KB2898774</Notes>
+
+	</Update> 
+
+	<Update id="KB2894032">
+
+		<Description>2013-12-10 Clustered virtual machine cannot access LUNs over a Synthetic Fibre Channel after you perform live migration on Windows Server 2012 or Windows Server 2012 R2-based Hyper-V hosts</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix475626/9200/free/468990_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update> 
+
+	<Update id="KB2894464">
+
+		<Description>2013-11-14 Error message when you try to schedule a shadow copy task in Windows Server 2012</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix477775/9200/free/468892_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2838043">
+
+        <Description>2013-06-14 Can't access a resource that is hosted on a Windows 8 or Windows Server 2012-based failover cluster</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix448128/9200/free/463564_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2803748">
+
+        <Description>2013-01-23 Failover Cluster Management snap-in crashes after you install update 2750149 on a Windows Server 2012-based failover cluster</Description>
+
+		<DownloadURL>http://download.microsoft.com/download/F/9/8/F985C3E3-2DDD-40BA-9DF7-C7CD4836273E/Windows8-RT-KB2803748-x64.msu</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2770917">
+
+        <Description>2012-11-13 Windows 8 and Windows Server 2012 cumulative update: November 2012</Description>
+
+		<DownloadURL>http://download.microsoft.com/download/4/9/6/496C09FF-C2CB-4F8F-B941-3860180F50CE/Windows8-RT-KB2770917-x64.msu</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB976424">
+
+        <Description>2012-11-13 Error code when the kpasswd protocol fails after you perform an authoritative restore: "KDC_ERROR_S_PRINCIPAL_UNKNOWN"</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%207/WindowsServer%202008%20R2/sp1/Fix336120/7600/free/418332_intl_x64_zip.exe</DownloadURL>
+
+		<Notes>This hotfix is related for W2K12 based clusters if W2K8 or W2K8 R2 domain controllers are available in the environment.</Notes>
+
+	</Update>
+
+</Updates>
+

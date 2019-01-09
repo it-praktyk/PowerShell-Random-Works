@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+
+<Updates>
+
+	<Description>Updates List Hyper-V and Cluster</Description>
+
+	<LastUpdated>2014-03-24</LastUpdated>
+
+	<Update Id="KB2756872">
+
+        <Description>2012-02-10 Windows 8 Client and Windows Server 2012 General Availability Update Rollup</Description>
+
+        <DownloadURL></DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2770440">
+
+        <Description>2012-02-17 Poor performance when you enable RemoteFX in Hyper-V on a Windows Server 2012-based computer that uses AMD processors</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix415288/9200/free/454286_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+	
+	<Update Id="KB2770917">
+
+        <Description>2012-11-02 Windows 8 and Windows Server 2012 cumulative update: November 2012</Description>
+
+        <DownloadURL> </DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2779768">
+
+        <Description>2012-11-20 Windows 8 and Windows Server 2012 cumulative update: December 2012</Description>
+
+        <DownloadURL> </DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2785638">
+
+        <Description>2012-12-01 You cannot use the Cisco SR-IOV network adapter on a virtual machine in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix420137/9200/free/455756_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2795944">
+
+        <Description>2013-01-16 Windows 8 and Windows Server 2012 update rollup: February 2013</Description>
+
+        <DownloadURL> </DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2803748">
+
+        <Description>2013-01-17 Failover Cluster Management snap-in crashes after you install update 2750149 on a Windows Server 2012-based failover cluster</Description>
+
+        <DownloadURL>http://download.microsoft.com/download/F/9/8/F985C3E3-2DDD-40BA-9DF7-C7CD4836273E/Windows8-RT-KB2803748-x64.msu</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2807654">
+
+        <Description>2013-01-31 0x000000C2" Stop error when you try to back up a data deduplication-enabled volume in Windows 8 or Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix424137/9200/free/458377_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2809117">
+
+        <Description>2013-02-01 Add-TargetPortToMaskingSet PowerShell command fails in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix424258/9200/free/458519_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2795531">
+
+        <Description>2013-02-02 You cannot log on to a virtual machine that is running Windows 8 or Windows Server 2012 in a VDI environment</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix418231/9200/free/458631_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2811660">
+
+        <Description>2013-02-02 Windows 8 and Windows Server 2012 cumulative update: March 2013</Description>
+
+        <DownloadURL> </DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+    <Update Id="KB2806542">
+
+        <Description>2013-02-05 0x000000D1" Stop error on a virtual machine in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix419988/9200/free/458795_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+    </Update>
+
+	<Update Id="KB2822241">
+
+        <Description>2013-03-02 Windows 8 and Windows Server 2012 cumulative update: April 2013</Description>
+
+        <DownloadURL> </DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2823643">
+
+        <Description>2013-03-04 Virtual machines freeze at the "Stopping" state after you shut down the virtual machines in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix428954/9200/free/460275_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2823958">
+
+        <Description>2013-03-05 Virtual switch extension cannot send packets separately through every individual network adapter in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix422461/9200/free/460278_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2823956">
+
+        <Description>2013-03-07 You cannot connect to a database stored in Windows Azure SQL Database in Windows Server 2012 (sic)</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/sp1/Fix429038/9200/free/463699_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2825135">
+
+        <Description>2013-04-03 You cannot perform an online backup operation by using Windows Server Backup in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix425682/9200/free/461513_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2834026">
+
+        <Description>2013-04-06 "0x00000050" Stop error when you try to create a virtual machine or copy a VHD or VHDX file to a SMB share in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix449192/9200/free/462210_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2836988">
+
+        <Description>2013-04-08 Windows 8 and Windows Server 2012 update rollup: May 2013</Description>
+
+        <DownloadURL> </DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2836402">
+
+        <Description>2013-04-11 You cannot add VHD files to Hyper-V virtual machines in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix430272/9200/free/462174_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2845533">
+
+        <Description>2013-05-04 Windows RT, Windows 8, and Windows Server 2012 update rollup: June 2013</Description>
+
+        <DownloadURL> </DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2832478">
+
+        <Description>2013-05-07 Virtual machines crash or take a long time to complete the shutdown process on a Windows Server 2012-based host computer</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix425991/9200/free/463210_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2838043">
+
+        <Description>2013-05-09 Can't access a resource that is hosted on a Windows 8 or Windows Server 2012-based failover cluster</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix448128/9200/free/463564_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2838988">
+
+        <Description>2013-05-09 You cannot manage permissions or create virtual machines on a file share by using System Center 2012 SP1 VMM in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix436877/9200/free/463590_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2848344">
+
+        <Description>2013-05-10 Update improves cluster resiliency in Windows Server 2012</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix465138/9200/free/463625_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2844296">
+
+        <Description>2013-05-20 Shared Nothing Live Migration fails when you try to migrate a virtual machine to a destination server in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix451580/9200/free/463471_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2851998">
+
+        <Description>2013-06-17 The last backup did not complete successfully" error message when you back up a Windows 8 system</Description>
+
+        <DownloadURL>http://download.microsoft.com/download/1/6/A/16AFB447-5979-416B-9F9F-10546A39C4F6/Windows8-RT-KB2851998-x86.msu</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2840681">
+
+        <Description>2013-05-31 Computer does not shut down after you remove a virtual switch in Windows Server 2012</Description>
+
+        <DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix452929/9200/free/464214_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update Id="KB2855336">
+
+        <Description>2013-07-12 Windows RT, Windows 8, and Windows Server 2012 update rollup: July 2013 </Description>
+
+		<DownloadURL> </DownloadURL>
+
+		<Notes>Include KB285392, KB2854362</Notes>
+
+	</Update>
+
+	<Update Id="KB2894032">
+
+		<Description>2013-11-13 Clustered virtual machine cannot access LUNs over a Synthetic Fibre Channel after you perform live migration on Windows Server 2012-based Hyper-V hosts</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix475626/9200/free/468990_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update id="KB2894032">
+
+		<Description>2013-12-10 Clustered virtual machine cannot access LUNs over a Synthetic Fibre Channel after you perform live migration on Windows Server 2012 or Windows Server 2012 R2-based Hyper-V hosts</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix475626/9200/free/468990_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update id="KB2902014">
+
+		<Description>2013-12-12 System time of a virtual machine becomes incorrect after it crashes or resets in a 64 bit Windows 8-based or Windows Server 2012-based Hyper-V host</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix474669/9200/free/470213_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update id="KB2894485">
+
+		<Description>2013-12-12 Cross-page memory read or write operation crashes virtual machine that runs on 64-bit Windows 8-based or Windows Server 2012-based Hyper-V host</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix473670/9200/free/468919_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update id="KB2902821">
+
+		<Description>2014-01-09 A virtual machine that is configured to use the DLC protocol does not connect to an SNA host on Hyper-V Server 2012 or Hyper-V Server 2012 R2</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix474099/9200/free/470131_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update id="KB2916993">
+
+		<Description>2014-01-15 Stop error 0x9E in Windows Server 2012 or Windows 8 </Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix476948/9200/free/471040_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update id="KB2913695">
+
+		<Description>2014-01-15 OffloadWrite is doing PrepareForCriticalIo for the whole VHD in a Windows Server 2012 or Windows Server 2012 R2 Hyper-V host</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix486053/9200/free/470756_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update id="KB2913461">
+
+		<Description>2014-01-15 Hyper-V storage migration fails when you try to migrate VHD and configuration files to CSV volumes in Windows Server 2012</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix484008/9200/free/470731_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+
+	<Update id="KB2901237">
+
+		<Description>2014-01-15 Standard replica is created unexpectedly after you restart the VMMS service in Windows Server 2012</Description>
+
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208%20RTM/nosp/Fix476836/9200/free/470016_intl_x64_zip.exe</DownloadURL>
+
+		<Notes></Notes>
+
+	</Update>
+	
+	<Update id="KB2920193">
+	
+		<Description>2014-02-12 Virtual hard disk cannot be created on an SMB server without resiliency support from a Windows 8 or Windows Server 2012 computer</Description>
+		
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208/Windows%20Server%202012%20RTM/nosp/Fix485526/9200/free/471500_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
+	
+	</Update>
+	
+	<Update Id="KB2901896">
+	
+		<Description>2014-03-11 CSV block cache causes poor performance of virtual machines on Windows Server 2012</Description>
+		
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208/Windows%20Server%202012%20RTM/nosp/Fix495008/9200/free/472451_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
+	
+	</Update>
+	
+	<Update Id="KB2929869">
+	
+		<Description>2014-03-12 CSV snapshot file is corrupted when you create some files on the live volume</Description>
+		
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208/Windows%20Server%202012%20RTM/nosp/Fix486119/9200/free/472658_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
+		
+	</Update>
+	
+	<Update Id="KB2929078">
+	
+		<Description>2014-03-12 The CSV snapshot is corrupted when you delete and then re-create a file on the live volume in Windows Server 2012</Description>
+		
+		<DownloadURL>http://hotfixv4.microsoft.com/Windows%208/Windows%20Server%202012%20RTM/nosp/Fix486050/9200/free/472717_intl_x64_zip.exe</DownloadURL>
+		
+		<Notes></Notes>
+		
+	</Update>
+
+</Updates>
+
